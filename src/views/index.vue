@@ -28,7 +28,7 @@
           </li>
         </ul>
       </div>
-      <p class="more">浏览更多</p>
+      <p class="more product-more">浏览更多</p>
     </section>
 
     <section class="products solution">
@@ -77,22 +77,34 @@
 
       <el-row :gutter="20">
         <el-col :span="12" v-for="i in arr" :key="i" class="news-box">
+
           <div class="box">
             <div class="img">
               <img :src="'../../static/images/'+ 'news'+i+'.png'">
             </div>
-            <ul class="list">
-              <p>新闻标题新闻标题新闻标题</p>
-              <p>2018-08-08</p>
-              <p>
-                新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容
-              </p>
-            </ul>
+            <div class="news-body">
+              <div class="news-top">
+                <p class="news-title">新闻标题新闻标题新闻标题新闻标题新</p>
+                <p class="news-date">2018-08-08</p>
+              </div>
+              <div class="news-bottom">
+                {{ news | aa}}
+              </div>
+            </div>
           </div>
         </el-col>
       </el-row>
-      <p class="more">浏览更多</p>
+      <p class="more more-news">浏览更多</p>
     </section>
+
+    <section class="products" id="news">
+      <p class="section-title about-title">
+        <span class="title-cn">关于我们</span>
+        <span class="title-en">ABOUT US</span>
+        <img src="../../static/images/arrow-down.png">
+      </p>
+    </section>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -101,16 +113,29 @@ import Vue from "vue";
 import axios from "axios";
 
 import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
 export default {
   name: "index",
   components: {
-    Header: Header
+    Header: Header,
+    Footer: Footer
   },
   data() {
     return {
       arr: [1, 2, 3, 4],
-      test: [1, 2]
+      test: [1, 2],
+      news:
+        "新闻内容新闻内容新闻内容新闻内容新闻内容新新闻内容新闻内容新闻内容新闻内内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容容新闻内容新闻内容闻内容闻内容闻内内容闻内内容闻内内容闻"
     };
+  },
+  filters: {
+    aa(a) {
+      if (a.length > 86) {
+        return a.substring(0, 86) + "...";
+      } else {
+        return a;
+      }
+    }
   },
   mounted() {},
   methods: {}
@@ -118,6 +143,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+footer {
+  margin-top: 20px;
+}
 .index {
   padding-bottom: 10px;
 }
@@ -129,6 +157,7 @@ export default {
     width: 100%;
   }
 }
+
 .products {
   width: 1200px;
   margin: 0 auto;
@@ -202,7 +231,7 @@ export default {
 }
 
 .solution {
-  padding: 60px 0;
+  padding: 0px 0;
   overflow: hidden;
   .box_left {
     margin: 0 auto;
@@ -276,36 +305,80 @@ export default {
 }
 
 .more {
-  width: 150px;
-  height: 45px;
-  line-height: 45px;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
   margin: 0 auto;
   border: 1px #003c56 solid;
   color: #003c56;
-  border-radius: 5px;
+  border-radius: 4px;
   font-size: 14px;
   letter-spacing: 1px;
 }
 
-.el-col {
-  // margin: 5px;
-  border-radius: 4px;
+.more-news {
+  margin-top: 100px;
 }
-
-.news-box {
-
+.product-more {
+  margin-top: 50px;
 }
 
 .box {
   height: 150px;
-  margin: 10px;
+  margin: 10px 0;
   border: 1px solid #ccc;
+  border-radius: 6px;
+  .img {
+    float: left;
+    width: 150px;
+    height: 150px;
+    img {
+      // width: 150px;
+      // height: 150px;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .news-body {
+    width: 73%;
+    height: 150px;
+    float: left;
+    .news-top {
+      height: 20%;
+      .news-title {
+        float: left;
+        padding-top: 10px;
+        padding-left: 12px;
+        color: #333;
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 67%;
+      }
+      .news-date {
+        float: right;
+        width: 20%;
+        color: #999;
+        font-size: 12px;
+        padding-top: 13px;
+        padding-right: 5px;
+      }
+    }
+    .news-bottom {
+      height: 80%;
+      overflow: hidden;
+      float: left;
+      padding: 5px 5px 5px 15px;
+      text-align: left;
+      line-height: 35px;
+      font-size: 14px;
+      color: #666;
+    }
+  }
 }
-.box .img {
-  float: left;
-}
-.box .img img {
-  width: 150px;
-  height: 150px;
+.about-title {
+  margin-bottom: 70px;
 }
 </style>

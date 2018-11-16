@@ -16,10 +16,13 @@ export default {
   padding: 0;
 }
 body{
-  background: #f8f8f8;
+  background: #F2F2F2;
 }
 ol,
 ul {
   list-style: none;
+}
+a{
+  text-decoration-line: none;
 }
 </style>

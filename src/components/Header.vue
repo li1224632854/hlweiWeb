@@ -2,7 +2,7 @@
     <div id="header">
         <header class="tab-body">
             <div class="logo">
-                <img src="../../static/images/hlwlogo.png">
+                <img src="../../static/images/logo.png">
             </div>
             <nav class="nav">
                 <ul>
@@ -38,11 +38,12 @@ export default {
 
 <style lang="less" scoped>
 #header {
-  background: #f2f2f2;
+  background: #fff;
   width: 100%;
   height: 80px;
   line-height: 80px;
   position: fixed;
+  z-index: 999;
 }
 .tab-body {
   width: 1200px;
@@ -52,27 +53,28 @@ export default {
     height: 80px;
     line-height: 80px;
     width: 131px;
-    margin-left: 70px;
+    // margin-left: 30px;
     img {
       border: 0;
       vertical-align: middle;
     }
   }
   .nav {
-    width: 40%;
+    width: 42%;
     float: right;
     display: block;
-    padding-left: 0;
+    // padding-left: 20px;
     margin-bottom: 0;
     list-style: none;
     ul {
+      margin-left: 50px;
       width: 100%;
       height: 80px;
       display: flex;
       justify-content: center;
       align-items: center;
       li {
-        font-size: 17px;
+        font-size: 16px;
         flex: 1;
         text-align: center;
         border-radius: 5px;
@@ -87,11 +89,11 @@ export default {
         }
         a:hover {
           color: #fff;
-          background: #cc5a5a;
+          background: #003C56;
         }
         a.active {
           color: #fff;
-          background: #cc5a5a;
+          background: #003C56;
         }
       }
     }

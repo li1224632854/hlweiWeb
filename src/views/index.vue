@@ -4,14 +4,39 @@
 
     <!-- 留言 -->
     <div class="message-box">
-      <router-link to="">
+      <a @click="showMessageBox = true">
         <img src="../../static/images/message.png">
-      </router-link>
+      </a>
     </div>
+
+    <el-dialog title="在线留言" :visible.sync="showMessageBox">
+      <el-form :model="form">
+        <el-form-item label="怎么称呼" :label-width="formLabelWidth">
+          <el-input v-model="form.name"></el-input>
+        </el-form-item>
+
+        <el-form-item label="联系方式" :label-width="formLabelWidth">
+          <el-input v-model="form.contact"></el-input>
+        </el-form-item>
+
+        <el-form-item label="常用邮箱" :label-width="formLabelWidth">
+          <el-input v-model="form.email"></el-input>
+        </el-form-item>
+
+        <el-form-item label="您的留言" :label-width="formLabelWidth">
+          <el-input type="textarea" rows="6" v-model="form.message"></el-input>
+        </el-form-item>
+
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="showMessageBox = false">取 消</el-button>
+        <el-button type="primary" @click="submitMessage">确 定</el-button>
+      </div>
+    </el-dialog>
 
     <!-- banner轮播图 -->
     <div class="banner" id="head">
-      <img src="../../static/images/banner1.png">
+      <img src="../../static/images/banner.png">
     </div>
 
     <!-- 产品 解决方案  -->
@@ -146,6 +171,14 @@ export default {
   },
   data() {
     return {
+      showMessageBox: false,
+      formLabelWidth: "100px",
+      form: {
+        name: "",
+        contact: "",
+        email: "",
+        message: ""
+      },
       arr: [1, 2, 3, 4],
       products: [
         {
@@ -217,7 +250,15 @@ export default {
     }
   },
   mounted() {},
-  methods: {}
+  methods: {
+    submitMessage() {
+      this.showMessageBox = false;
+      this.$message({
+        message: "提交成功，感谢留言",
+        type: "success"
+      });
+    }
+  }
 };
 </script>
 

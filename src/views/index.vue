@@ -466,6 +466,10 @@ footer {
   z-index: 500;
   right: 0;
   top: 1180px;
+  img {
+    width: 50px;
+    height: 100px;
+  }
 }
 .el-row {
   margin-top: 70px;

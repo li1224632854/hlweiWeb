@@ -1,24 +1,53 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Vuex from 'vuex';
+// import Vuex from 'vuex';
 
-import index from '@/views/index'
+import layout from '@/views/layout'
+// import index from '@/views/index'
 
 Vue.use(VueRouter);
-Vue.use(Vuex);
+// Vue.use(Vuex);
 
 //重构全局钩子
 const routes = [{
     path: '/',
-    name: index,
-    component: index,
+    name: layout,
+    component: layout,
+    redirect: '/index',
     //   meta: {
     //     requireAuth: true,
     //     keepAlive: true
     //   },
+    children: [{
+            path: '/index',
+            component: () =>
+                import ('@/views/index'),
+        }, {
+            path: '/product',
+            component: () =>
+                import ('@/views/list/product'),
+        },
+        {
+            path: '/product/detail/:id',
+            component: () =>
+                import ('@/views/detail/product'),
+        },
+        {
+            path: '/news',
+            component: () =>
+                import ('@/views/list/news')
+        }, {
+            path: '/about',
+            component: () =>
+                import ('@/views/list/about')
+        }
+    ]
 }, ];
 const router = new VueRouter({
     mode: 'history', //mode: 'hash'
+    scrollBehavior: () => ({
+        y: 0
+    }),
     routes
 });
 

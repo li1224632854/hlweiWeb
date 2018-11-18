@@ -6,14 +6,13 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         Username: '',
-        Name: ''
+        Name: '',
+        currentIndex: ''
     },
     mutations: {
-        Login: (state, data) => {
-
-        },
-        Logout: (state, data) => {
-
+        setIndex: (state, data) => {
+            state.currentIndex = data;
+            console.log(state, data);
         },
         Username: (state, data) => {
 

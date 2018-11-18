@@ -1,18 +1,18 @@
 <template>
-    <div id="header">
-        <header class="tab-body">
-            <div class="logo">
-                <img src="../../static/images/logo.png">
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li v-for="(item,index)  in tabs" @click="addClass(index)">
-                        <a :href="item.value" :class="{ active:index==current}">{{item.title}}</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+  <div id="header">
+    <header class="tab-body">
+      <div class="logo">
+        <img src="../../static/images/logo.png">
+      </div>
+      <nav class="nav">
+        <ul>
+          <li v-for="(item,index)  in tabs" @click="addClass(index)">
+            <a :href="item.value" :class="{ active:item.value==path}">{{item.title}}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
 </template>
 
 <script>
@@ -20,18 +20,23 @@ export default {
   data() {
     return {
       tabs: [
-        { title: "首页", value: "#head" },
-        { title: "产品中心", value: "#product" },
-        { title: "新闻中心", value: "#news" },
-        { title: "关于我们", value: "#abouts" }
+        { title: "首页", value: "/index" },
+        { title: "产品中心", value: "/product" },
+        { title: "新闻中心", value: "/news" },
+        { title: "关于我们", value: "/about" }
       ],
-      current: 0
+      current: 0,
+      path: this.$route.path
     };
+  },
+  props: {
+    currentIndex: Number,
+    default: 0
   },
   methods: {
     addClass: function(index) {
-      this.current = index;
-    }
+      // this.current = index;
+    },
   }
 };
 </script>
@@ -89,11 +94,11 @@ export default {
         }
         a:hover {
           color: #fff;
-          background: #003C56;
+          background: #003c56;
         }
         a.active {
           color: #fff;
-          background: #003C56;
+          background: #003c56;
         }
       }
     }

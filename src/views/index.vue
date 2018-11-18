@@ -1,7 +1,5 @@
 <template>
   <div class="index">
-    <Header></Header>
-
     <!-- 留言 -->
     <div class="message-box">
       <a @click="showMessageBox = true">
@@ -64,7 +62,7 @@
           </li>
         </ul>
       </div>
-      <router-link to="">
+      <router-link to="/product">
         <p class="more product-more">
           浏览更多
         </p>
@@ -104,7 +102,7 @@
           </ul>
         </div>
       </div>
-      <router-link to="">
+      <router-link to="/product">
         <p class="more">浏览更多</p>
       </router-link>
     </section>
@@ -137,7 +135,7 @@
           </div>
         </el-col>
       </el-row>
-      <router-link to="">
+      <router-link to="/news">
         <p class="more more-news">浏览更多</p>
       </router-link>
     </section>
@@ -152,8 +150,6 @@
       </p>
     </section>
     <!-- end 关于我们 -->
-
-    <Footer></Footer>
   </div>
 </template>
 
@@ -234,15 +230,15 @@ export default {
   },
   filters: {
     untilNews(v) {
-      if (v.length > 100) {
+      if (v.length > 85) {
         return v.substring(0, 85) + "...";
       } else {
         return v;
       }
     },
     utilLength(v) {
-      if (v.length > 38) {
-        console.log(v.length);
+      if (v.length > 35) {
+        // console.log(v.length);
         return v.substring(0, 35) + "...";
       } else {
         return v;
@@ -263,9 +259,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-footer {
-  margin-top: 20px;
-}
+// footer {
+//   margin-top: 20px;
+// }
 .index {
   padding-bottom: 10px;
 }

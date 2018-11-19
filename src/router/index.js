@@ -24,27 +24,23 @@ const routes = [{
                 import ('@/views/index'),
         }, {
             path: '/product',
-            component: () =>
-                import ('@/views/list/product'),
+            component: (resolve) => require(['@/views/list/product'], resolve)
         },
         {
             path: '/product/detail/:id',
-            component: () =>
-                import ('@/views/detail/product'),
+            component: (resolve) => require(['@/views/detail/product'], resolve)
         },
         {
             path: '/news',
-            component: () =>
-                import ('@/views/list/news')
+            component: (resolve) => require(['@/views/list/news'], resolve)
         }, {
             path: '/about',
-            component: () =>
-                import ('@/views/list/about')
+            component: (resolve) => require(['@/views/list/about'], resolve)
         }
     ]
 }, ];
 const router = new VueRouter({
-    mode: 'history', //mode: 'hash'
+    mode: 'history',
     scrollBehavior: () => ({
         y: 0
     }),
@@ -70,7 +66,7 @@ const router = new VueRouter({
 // });
 
 //保持用户名 登录的时候将信息存储到localstorage 然后获取提交到Vuex
-// if (window.localStorage.getItem('Username', 'Name')) {
+// if (window.localStorage.getItem('Username')) {
 //   store.commit("Username", window.localStorage.getItem('Username'));
 //   store.commit("Name", window.localStorage.getItem('Name'));
 // }

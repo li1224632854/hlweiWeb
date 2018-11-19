@@ -156,6 +156,26 @@
 <script>
 import Vue from "vue";
 import axios from "axios";
+import {
+  Form,
+  FormItem,
+  Dialog,
+  Input,
+  Button,
+  Row,
+  Col,
+  Message
+} from "element-ui";
+
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Dialog);
+Vue.use(Input);
+Vue.use(Button);
+Vue.use(Row);
+Vue.use(Col);
+
+Vue.prototype.$message = Message;
 
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";

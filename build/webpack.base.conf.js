@@ -9,7 +9,7 @@ function resolve(dir) {
 
 module.exports = {
     entry: {
-        app: './src/main.js'
+        app: ["babel-polyfill", './src/main.js']
     },
     output: {
         path: config.build.assetsRoot,
@@ -39,7 +39,7 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
-                    limit: 500000,
+                    limit: 10000,
                     name: utils.assetsPath('img/[name].[hash:7].[ext]')
                 }
             },
@@ -52,5 +52,8 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    externals: {
+        'element-ui': 'ELEMENT',
+    },
 }

@@ -33,6 +33,10 @@ const routes = [{
         {
             path: '/news',
             component: (resolve) => require(['@/views/list/news'], resolve)
+        },
+        {
+            path: '/news/detail/:id',
+            component: (resolve) => require(['@/views/detail/news'], resolve)
         }, {
             path: '/about',
             component: (resolve) => require(['@/views/list/about'], resolve)

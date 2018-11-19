@@ -48,7 +48,7 @@
       <div class="product-box">
         <ul class="boxs-ul">
           <li v-for="(val,i) in products">
-            <router-link to="">
+            <router-link :to="'/product/detail/' + i">
               <div class="img-box">
                 <img :src="'../../static/images/'+ 'product'+i+'.png'">
               </div>
@@ -77,7 +77,7 @@
       <div class="product-box solution-box">
         <div class="box_left">
           <div class="box_big">
-            <router-link to="">
+            <router-link :to="'/product/detail/' + 1">
               <div class="left-img">
                 <img src="../../static/images/solution0.png">
               </div>
@@ -90,7 +90,7 @@
         <div class="box_right">
           <ul class="boxs-ul right-ul">
             <li v-for="(val,i) in solutions">
-              <router-link to="">
+              <router-link :to="'/product/detail/' + i">
                 <div class="img-right">
                   <img :src="'../../static/images/'+ 'solution'+(i+1)+'.png'">
                 </div>

@@ -34,7 +34,7 @@
 
     <!-- banner轮播图 -->
     <div class="banner" id="head">
-      <img src="../../static/images/banner.png">
+      <img src="../../static/images/banner.jpg">
     </div>
 
     <!-- 产品 解决方案  -->

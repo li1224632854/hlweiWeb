@@ -1,6 +1,6 @@
 <template>
     <div class="detail">
-        <h3>新闻详情</h3>
+        <iframe src="" frameborder="0" height="580" width="80%"></iframe>
     </div>
 </template>
 

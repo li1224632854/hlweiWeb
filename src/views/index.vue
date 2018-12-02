@@ -518,7 +518,7 @@ export default {
   margin-top: 100px;
 }
 .product-more {
-  margin-top: 50px;
+  margin-top: -15px;
 }
 
 .box {

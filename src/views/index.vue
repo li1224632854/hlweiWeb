@@ -34,15 +34,19 @@
 
     <!-- banner轮播图 -->
     <div class="banner" id="head">
-      <img src="../../static/images/banner.jpg">
+      <el-carousel :interval="5000" arrow="always" height="600px">
+        <el-carousel-item v-for="item in 3" :key="item">
+          <img src="../../static/images/banner.jpg">
+        </el-carousel-item>
+      </el-carousel>
     </div>
 
     <!-- 产品 解决方案  -->
     <div id="product"></div>
-    <section class="products">
+    <!-- <section class="products">
       <p class="section-title">
-        <span class="title-cn">代理产品</span>
-        <span class="title-en">AGENT PRODUCTS</span>
+        <span class="title-cn">业务范围</span>
+        <span class="title-en">BUSINESS SCOPE</span>
         <img src="../../static/images/arrow-down.png">
       </p>
       <div class="product-box">
@@ -67,7 +71,34 @@
           浏览更多
         </p>
       </router-link>
-    </section>
+    </section> -->
+    <section class="products">
+      <p class="section-title">
+        <span class="title-cn">业务范围</span>
+        <span class="title-en">BUSINESS SCOPE</span>
+        <img src="../../static/images/arrow-down.png">
+      </p>
+      <div class="product-box">
+        <ul class="boxs-ul">
+          <li v-for="(val,i) in products">
+            <router-link :to="'/product/detail/' + i">
+              <div class="img-box">
+                <img :src="'../../static/images/'+ 'product'+i+'.png'">
+              </div>
+              <div class="box-hover">
+                <p class="hover-title1">{{val.title}}</p>
+                <p class="hover-title2">{{val.intro}}</p>
+              </div>
+            </router-link>
+          </li>
+        </ul>
+      </div>
+      <router-link to="/product">
+        <p class="more product-more">
+          浏览更多
+        </p>
+      </router-link>
+    </section> -->
     <section class="products solution">
       <p class="section-title">
         <span class="title-cn">解决方案</span>
@@ -164,7 +195,9 @@ import {
   Button,
   Row,
   Col,
-  Message
+  Message,
+  Carousel,
+  CarouselItem
 } from "element-ui";
 
 Vue.use(Form);
@@ -174,6 +207,8 @@ Vue.use(Input);
 Vue.use(Button);
 Vue.use(Row);
 Vue.use(Col);
+Vue.use(Carousel);
+Vue.use(CarouselItem);
 
 Vue.prototype.$message = Message;
 
@@ -198,19 +233,17 @@ export default {
       arr: [1, 2, 3, 4],
       products: [
         {
-          title: "无线对耳",
-          intro:
-            "先进的CMOS工艺全集成包括射频，电源管理，音频以及Cortex-M4F MCU"
+          title: "硬件开发",
+          intro: "蓝牙方案设计及模组制造"
         },
         {
-          title: "无线对箱",
-          intro: "支持Bluetooth® v4.2标准，A2DP v1.3/ACRCP v1.5/HFP v1.5"
+          title: "软件开发",
+          intro: "蓝牙方案设计及模组制造"
         },
-        { title: "智能音箱", intro: "支持多端EQ调整，回声消除及重低音增强" },
+        { title: "芯片代理", intro: "蓝牙方案设计及模组制造" },
         {
-          title: "Lightening接口主动降噪耳机",
-          intro:
-            "最高支持400MHz的ARM Cortex-M4F MCU操作片上支持8Mb Flash方便客户定制化程序开发"
+          title: "APP & 贴片/测试",
+          intro: "蓝牙方案设计及模组制造"
         }
       ],
       solutions: [
@@ -329,6 +362,34 @@ export default {
         border-radius: 3px;
         overflow: hidden;
         width: calc(23%);
+        .box-hover {
+          position: absolute;
+          padding: 5px;
+          width: 100%;
+          height: 300px;
+          top: 0;
+          left: 0;
+          z-index: 10;
+          opacity: 0;
+          .hover-title1 {
+            color: #fff;
+            font-size: 18px;
+            line-height: 150px;
+          }
+          .hover-title2 {
+            color: #fff;
+            font-size: 15px;
+          }
+        }
+        .box-hover:hover {
+          background: #3f404f;
+          text-transform: uppercase;
+          opacity: 0.9;
+          transition: All 0.4s ease-in-out;
+          -webkit-transition: All 0.4s ease-in-out;
+          -moz-transition: All 0.4s ease-in-out;
+          -o-transition: All 0.4s ease-in-out;
+        }
         .img-box {
           width: 100%;
           height: 100%;

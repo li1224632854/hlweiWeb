@@ -35,8 +35,8 @@
     <!-- banner轮播图 -->
     <div class="banner" id="head">
       <el-carousel :interval="5000" arrow="always" height="600px">
-        <el-carousel-item v-for="item in 3" :key="item">
-          <img src="../../static/images/banner.jpg">
+        <el-carousel-item v-for="(item,index) in 2" :key="item">
+          <img :src="'../../static/images/banner' + index + '.jpg'">
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -83,7 +83,7 @@
           <li v-for="(val,i) in products">
             <router-link :to="'/product/detail/' + i">
               <div class="img-box">
-                <img :src="'../../static/images/'+ 'product'+i+'.png'">
+                <img :src="'../../static/images/'+ 'business'+i+'.png'">
               </div>
               <div class="box-hover">
                 <p class="hover-title1">{{val.title}}</p>
@@ -242,7 +242,11 @@ export default {
         },
         { title: "芯片代理", intro: "蓝牙方案设计及模组制造" },
         {
-          title: "APP & 贴片/测试",
+          title: "APP",
+          intro: "蓝牙方案设计及模组制造"
+        },
+        {
+          title: "贴片/测试",
           intro: "蓝牙方案设计及模组制造"
         }
       ],
@@ -357,11 +361,11 @@ export default {
       li {
         float: left;
         position: relative;
-        margin: 0 12px;
-        height: 375px;
+        margin: 0 5px;
+        height: 262px;
         border-radius: 3px;
         overflow: hidden;
-        width: calc(23%);
+        width: calc(19%);
         .box-hover {
           position: absolute;
           padding: 5px;

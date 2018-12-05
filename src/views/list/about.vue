@@ -72,7 +72,7 @@
           <ul v-for="i in 8">
             <li>
               <a href="#">
-                <img src="../../../static/images/logo.png" class="partner-img">
+                <img src="" class="partner-img" alt="合作伙伴图片">
               </a>
             </li>
           </ul>

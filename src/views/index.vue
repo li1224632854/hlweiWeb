@@ -34,7 +34,7 @@
 
     <!-- banner轮播图 -->
     <div class="banner" id="head">
-      <el-carousel :interval="5000" arrow="always" height="600px">
+      <el-carousel :interval="4000" arrow="always" height="600px">
         <el-carousel-item v-for="(item,index) in 2" :key="item">
           <img :src="'../../static/images/banner' + index + '.jpg'">
         </el-carousel-item>
@@ -81,7 +81,8 @@
       <div class="product-box">
         <ul class="boxs-ul">
           <li v-for="(val,i) in products">
-            <router-link :to="'/product/detail/' + i">
+            <!-- <router-link :to="'/product/detail/' + i"> -->
+            <router-link to="#">
               <div class="img-box">
                 <img :src="'../../static/images/'+ 'business'+i+'.png'">
               </div>
@@ -93,12 +94,12 @@
           </li>
         </ul>
       </div>
-      <router-link to="/product">
+      <router-link to="#">
         <p class="more product-more">
           浏览更多
         </p>
       </router-link>
-    </section> -->
+    </section>
     <section class="products solution">
       <p class="section-title">
         <span class="title-cn">解决方案</span>
@@ -108,7 +109,8 @@
       <div class="product-box solution-box">
         <div class="box_left">
           <div class="box_big">
-            <router-link :to="'/product/detail/' + 1">
+            <!-- <router-link :to="'/product/detail/' + 1"> -->
+            <router-link to="#">
               <div class="left-img">
                 <img src="../../static/images/solution0.png">
               </div>
@@ -121,7 +123,8 @@
         <div class="box_right">
           <ul class="boxs-ul right-ul">
             <li v-for="(val,i) in solutions">
-              <router-link :to="'/product/detail/' + i">
+              <!-- <router-link :to="'/product/detail/' + i"> -->
+              <router-link to="#">
                 <div class="img-right">
                   <img :src="'../../static/images/'+ 'solution'+(i+1)+'.png'">
                 </div>
@@ -133,7 +136,7 @@
           </ul>
         </div>
       </div>
-      <router-link to="/product">
+      <router-link to="#">
         <p class="more">浏览更多</p>
       </router-link>
     </section>
@@ -150,20 +153,22 @@
 
       <el-row :gutter="20">
         <el-col :span="12" v-for="(val,i) in news" :key="i" class="news-box">
-          <div class="box">
-            <div class="img">
-              <img :src="'../../static/images/'+ 'news'+i+'.png'">
-            </div>
-            <div class="news-body">
-              <div class="news-top">
-                <p class="news-title">{{val.title}}</p>
-                <p class="news-date">{{val.date}}</p>
+          <router-link :to="'/news/detail/' + i">
+            <div class="box">
+              <div class="img">
+                <img :src="'../../static/images/'+ 'news'+i+'.png'">
               </div>
-              <div class="news-bottom">
-                {{ val.content | untilNews}}
+              <div class="news-body">
+                <div class="news-top">
+                  <p class="news-title">{{val.title}}</p>
+                  <p class="news-date">{{val.date}}</p>
+                </div>
+                <div class="news-bottom">
+                  {{ val.content | untilNews}}
+                </div>
               </div>
             </div>
-          </div>
+          </router-link>
         </el-col>
       </el-row>
       <router-link to="/news">

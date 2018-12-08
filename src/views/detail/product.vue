@@ -1,7 +1,9 @@
 <template>
   <div class="detail">
     <div class="detail-left">
-      <img :src="'../../../static/images/'+ 'detail'+1+'.png'">
+      <el-card class="box-card">
+        <carousel :starting-image="0" :images="images" :auto-slide-interval="3000"></carousel>
+      </el-card>
     </div>
     <div class="detail-right">
       <h1 class="right-title">BES2000U/A</h1>
@@ -16,10 +18,65 @@
 </template>
 
 <script>
+import Vue from "vue";
+import { Card } from "element-ui";
+Vue.use(Card);
+import Carousel from "../../components/Carousel.vue";
 export default {
   name: "detail",
+  components: {
+    Carousel: Carousel
+  },
   data() {
-    return {};
+    return {
+      images: [
+        {
+          id: "0",
+          big: "../../../static/images/product6.png",
+          thumb: "../../../static/images/product6.png"
+        },
+        {
+          id: "1",
+          big: "../../../static/images/product4.png",
+          thumb: "../../../static/images/product4.png"
+        },
+        {
+          id: "2",
+          big: "../../../static/images/product5.png",
+          thumb: "../../../static/images/product5.png"
+        },
+        {
+          id: "3",
+          big: "../../../static/images/product8.png",
+          thumb: "../../../static/images/product8.png"
+        },
+        {
+          id: "4",
+          big: "../../../static/images/product7.png",
+          thumb: "../../../static/images/product7.png"
+        },
+        // {
+        //   id: "5",
+        //   big: "../../../static/images/product7.png",
+        //   thumb: "../../../static/images/product7.png"
+        // },
+        // {
+        //   id: "6",
+        //   big: "../../../static/images/product7.png",
+        //   thumb: "../../../static/images/product7.png"
+        // },
+        // {
+        //   id: "7",
+        //   big: "../../../static/images/product7.png",
+        //   thumb: "../../../static/images/product7.png"
+        // },
+        // {
+        //   id: "8",
+        //   big: "../../../static/images/product7.png",
+        //   thumb: "../../../static/images/product7.png"
+        // }
+      ]
+    };
   }
 };
 </script>
@@ -31,9 +88,8 @@ export default {
   margin: 0 auto;
   height: 600px;
   .detail-left {
-    width: 35%;
+    width: 40%;
     float: left;
-    padding: 50px 0;
     height: 300px;
     text-align: center;
   }

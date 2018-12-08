@@ -69,10 +69,10 @@
         <div class="title">合作伙伴</div>
         <div class="partner"></div>
         <div class="partner-list">
-          <ul v-for="i in 8">
+          <ul v-for="v,i in 9">
             <li>
               <a href="#">
-                <img src="" class="partner-img" alt="合作伙伴图片">
+                <img src="" class="partner-img" :src="'../../../static/images/partner' + i + '.png'">
               </a>
             </li>
           </ul>
@@ -174,7 +174,7 @@ export default {
             content: "";
             height: 3px;
             width: 70px;
-            background-color:#003c56;
+            background-color: #003c56;
             margin-top: 12px;
           }
         }
@@ -229,7 +229,7 @@ export default {
         content: "";
         height: 3px;
         width: 70px;
-        background-color:#003c56;
+        background-color: #003c56;
         margin-top: -28px;
       }
     }
@@ -254,7 +254,7 @@ export default {
     ul {
       display: inline-block;
       li {
-        margin: 10px;
+        margin: 15px;
         .partner-img {
           height: 100px;
           width: 300px;

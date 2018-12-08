@@ -26,17 +26,26 @@ export default {
         { title: "关于我们", value: "/about" }
       ],
       current: 0,
-      path: this.$route.path
+      path: this.$route.path,
+      name: "index"
     };
   },
   props: {
     currentIndex: Number,
     default: 0
   },
+  computed: {
+    aa() {
+      const reg = /product/g;
+      if (reg.test(this.$route.path)) {
+      }
+      return reg.test(this.$route.path);
+    }
+  },
   methods: {
     addClass: function(index) {
       // this.current = index;
-    },
+    }
   }
 };
 </script>

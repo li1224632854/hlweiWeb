@@ -1,11 +1,48 @@
 <template>
   <div class="products">
     <div class="product-box">
+      <div class="img-box_left">
+        <img :src="'../../../static/images/detail0.png'" class="main_img">
+      </div>
       <ul class="boxs-ul">
         <li v-for="(val,i) in products">
           <router-link :to="'/product/detail/' + i">
             <div class="img-box">
               <img :src="'../../../static/images/'+ 'product'+i+'.png'">
+            </div>
+            <div class="box-title">
+              <div class="title1">
+                <p class="title1_1">{{val.title}}</p>
+              </div>
+            </div>
+          </router-link>
+        </li>
+      </ul>
+      <div class="img-box_left">
+        <img :src="'../../../static/images/detail1.png'" class="main_img">
+      </div>
+      <ul class="boxs-ul">
+        <li v-for="(val,i) in products1">
+          <router-link :to="'/product/detail/' + i">
+            <div class="img-box">
+              <img :src="'../../../static/images/'+ 'product'+(i+3)+'.png'">
+            </div>
+            <div class="box-title">
+              <div class="title1">
+                <p class="title1_1">{{val.title}}</p>
+              </div>
+            </div>
+          </router-link>
+        </li>
+      </ul>
+      <div class="img-box_left">
+        <img :src="'../../../static/images/detail2.png'" class="main_img">
+      </div>
+      <ul class="boxs-ul">
+        <li v-for="(val,i) in products2">
+          <router-link :to="'/product/detail/' + i">
+            <div class="img-box">
+              <img :src="'../../../static/images/'+ 'product'+(i+6)+'.png'">
             </div>
             <div class="box-title">
               <div class="title1">
@@ -36,7 +73,9 @@ export default {
         {
           title: "智能音箱",
           intro: ""
-        },
+        }
+      ],
+      products1: [
         {
           title: "Lightening接口主动降噪耳机",
           intro: ""
@@ -48,7 +87,9 @@ export default {
         {
           title: "无线运动耳机",
           intro: ""
-        },
+        }
+      ],
+      products2: [
         {
           title: "无线音频收发器",
           intro: ""
@@ -76,7 +117,23 @@ export default {
   .product-box {
     padding: 20px 0;
     overflow: hidden;
+    .img-box_left {
+      float: left;
+      width: 23%;
+      height: 318px;
+      float: left;
+      position: relative;
+      cursor: pointer;
+      background: #fff;
+      margin: 12px;
+      .main_img {
+        margin-top: 50px;
+        width: 95%;
+      }
+    }
     .boxs-ul {
+      width: 75%;
+      float: left;
       margin: 0 auto;
       li {
         float: left;
@@ -85,7 +142,9 @@ export default {
         height: 318px;
         border-radius: 3px;
         overflow: hidden;
-        width: calc(23%);
+        // width: calc(25%);
+        width: calc(30%);
+        // margin-right: 36px;
         .img-box {
           width: 100%;
           height: 100%;

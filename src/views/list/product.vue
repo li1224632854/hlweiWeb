@@ -81,11 +81,11 @@ export default {
           intro: ""
         },
         {
-          title: "蓝牙音箱",
+          title: "主动降噪Type-C耳机",
           intro: ""
         },
         {
-          title: "无线运动耳机",
+          title: "蓝牙音箱",
           intro: ""
         }
       ],
@@ -95,7 +95,7 @@ export default {
           intro: ""
         },
         {
-          title: "主动降噪Type-C耳机",
+          title: "无线运动耳机",
           intro: ""
         },
         {
@@ -126,6 +126,7 @@ export default {
       cursor: pointer;
       background: #fff;
       margin: 12px;
+      border-radius: 3px;
       .main_img {
         margin-top: 50px;
         width: 95%;

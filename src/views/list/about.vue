@@ -59,10 +59,10 @@
       </section>
 
       <!--办公环境-->
-      <section class="office">
+      <!-- <section class="office">
         <div class="title">办公环境</div>
         <div class="photo"><img src="../../../static/images/office.png" style="width:100%;"></div>
-      </section>
+      </section> -->
 
       <!-- 合作伙伴 -->
       <section class="office">

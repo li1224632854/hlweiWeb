@@ -67,11 +67,11 @@ export default {
           intro: ""
         },
         {
-          title: "无线对箱",
+          title: "无线对耳",
           intro: ""
         },
         {
-          title: "智能音箱",
+          title: "honor/荣耀FlyPods",
           intro: ""
         }
       ],
@@ -85,7 +85,7 @@ export default {
           intro: ""
         },
         {
-          title: "蓝牙音箱",
+          title: "海威特 I39运动蓝牙耳机",
           intro: ""
         }
       ],

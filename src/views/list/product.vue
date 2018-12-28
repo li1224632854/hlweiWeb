@@ -6,7 +6,7 @@
       </div>
       <ul class="boxs-ul">
         <li v-for="(val,i) in products">
-          <router-link :to="'/product/detail/' + i">
+          <router-link :to="'/product/detail/' + 0">
             <div class="img-box">
               <img :src="'../../../static/images/'+ 'product'+i+'.png'">
             </div>
@@ -23,7 +23,7 @@
       </div>
       <ul class="boxs-ul">
         <li v-for="(val,i) in products1">
-          <router-link :to="'/product/detail/' + i">
+          <router-link :to="'/product/detail/' + 1">
             <div class="img-box">
               <img :src="'../../../static/images/'+ 'product'+(i+3)+'.png'">
             </div>
@@ -40,7 +40,7 @@
       </div>
       <ul class="boxs-ul">
         <li v-for="(val,i) in products2">
-          <router-link :to="'/product/detail/' + i">
+          <router-link :to="'/product/detail/' + 2">
             <div class="img-box">
               <img :src="'../../../static/images/'+ 'product'+(i+6)+'.png'">
             </div>

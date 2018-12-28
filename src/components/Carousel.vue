@@ -153,8 +153,9 @@ export default {
 }
 
 .thumbnail-image > img {
-  width: 100%;
-  height: auto;
+  width: 100px;
+  height: 100px;
+  /* height: auto; */
   transition: all 250ms;
 }
 

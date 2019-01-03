@@ -80,11 +80,11 @@
       </p>
       <div class="product-box">
         <ul class="boxs-ul">
-          <li v-for="(val,i) in products">
+          <li v-for="(val,i) in products" :key="i">
             <!-- <router-link :to="'/product/detail/' + i"> -->
             <router-link to="#">
               <div class="img-box">
-                <img :src="'../../static/images/'+ 'business'+i+'.png'">
+                <img :src="'../../static/images/' + val.imgUrl">
               </div>
               <div class="box-hover">
                 <p class="hover-title1">{{val.title}}</p>
@@ -115,14 +115,14 @@
                 <img src="../../static/images/solution0.png">
               </div>
               <p class="left-title">
-                无线耳机解决方案
+                BT5.0低功耗TWS解决方案
               </p>
             </router-link>
           </div>
         </div>
         <div class="box_right">
           <ul class="boxs-ul right-ul">
-            <li v-for="(val,i) in solutions">
+            <li v-for="(val,i) in solutions" :key="i">
               <!-- <router-link :to="'/product/detail/' + i"> -->
               <router-link to="#">
                 <div class="img-right">
@@ -238,28 +238,35 @@ export default {
       arr: [1, 2, 3, 4],
       products: [
         {
+          imgUrl: 'business0.jpeg',
           title: "硬件开发",
-          intro: "蓝牙方案设计及模组制造"
+          intro: "10年硬件设计研发团队，专业私模定制，耳机方案开发"
         },
         {
+          imgUrl: 'business1.png',
           title: "软件开发",
-          intro: "蓝牙方案设计及模组制造"
+          intro: "WS&ANC主动降噪耳机定制UI及完整软件开发方案"
         },
-        { title: "芯片代理", intro: "蓝牙方案设计及模组制造" },
+        { 
+          imgUrl: 'business2.png',
+          title: "芯片代理", 
+          intro: "专业BES全系列芯片方案研发、设计、销售" },
         {
-          title: "APP",
-          intro: "蓝牙方案设计及模组制造"
+          imgUrl: 'business3.png',
+          title: "AI语音耳机方案智能研发",
+          intro: "专注BES芯片应用，搭载国内外互联网平台， AI智能语音方案"
         },
         {
-          title: "贴片/测试",
-          intro: "蓝牙方案设计及模组制造"
+          imgUrl: 'business4.png',
+          title: "完整测试系统",
+          intro: "蓝牙AP、8852B、网分专业测试系统设备"
         }
       ],
       solutions: [
-        "无线对箱解决方案",
-        "手机标配数字耳机解决方案",
-        "降噪耳机解决方案",
-        "智能音箱解决方案"
+        "ANC数字主动降噪解决方案",
+        "低功耗BT5.0单声道耳机解决方案",
+        "低功耗BT5.0立体声耳机解决方案",
+        "AI语音智能耳机方案"
       ],
       news: [
         {
@@ -388,6 +395,7 @@ export default {
           .hover-title2 {
             color: #fff;
             font-size: 15px;
+            padding-right: 5px;
           }
         }
         .box-hover:hover {

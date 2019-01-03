@@ -5,10 +5,10 @@
         <img :src="'../../../static/images/detail0.png'" class="main_img">
       </div>
       <ul class="boxs-ul">
-        <li v-for="(val,i) in products">
+        <li v-for="(val,i) in products" :key="i">
           <router-link :to="'/product/detail/' + 0">
             <div class="img-box">
-              <img :src="'../../../static/images/'+ 'product'+i+'.png'">
+              <img :src="'../../../static/images/'+ val.imgUrl">
             </div>
             <div class="box-title">
               <div class="title1">
@@ -22,10 +22,10 @@
         <img :src="'../../../static/images/detail1.png'" class="main_img">
       </div>
       <ul class="boxs-ul">
-        <li v-for="(val,i) in products1">
+        <li v-for="(val,i) in products1" :key="i">
           <router-link :to="'/product/detail/' + 1">
             <div class="img-box">
-              <img :src="'../../../static/images/'+ 'product'+(i+3)+'.png'">
+              <img :src="'../../../static/images/'+ val.imgUrl">
             </div>
             <div class="box-title">
               <div class="title1">
@@ -39,10 +39,10 @@
         <img :src="'../../../static/images/detail2.png'" class="main_img">
       </div>
       <ul class="boxs-ul">
-        <li v-for="(val,i) in products2">
+        <li v-for="(val,i) in products2" :key="i">
           <router-link :to="'/product/detail/' + 2">
             <div class="img-box">
-              <img :src="'../../../static/images/'+ 'product'+(i+6)+'.png'">
+              <img :src="'../../../static/images/'+ val.imgUrl">
             </div>
             <div class="box-title">
               <div class="title1">
@@ -63,43 +63,52 @@ export default {
     return {
       products: [
         {
-          title: "无线对耳",
+          imgUrl: 'product0.png',
+          title: "BT5.0蓝牙对耳方案",
           intro: ""
         },
         {
-          title: "无线对耳",
+          imgUrl: 'product1.png',
+          title: "BT5.0蓝牙对耳方案",
           intro: ""
         },
         {
-          title: "honor/荣耀FlyPods",
+          imgUrl: 'product2.png',
+          title: "BT5.0蓝牙对耳方案",
           intro: ""
         }
       ],
       products1: [
         {
-          title: "Lightening接口主动降噪耳机",
+          imgUrl: 'product3.png',
+          title: "BES2000IS/2300Y",
           intro: ""
         },
         {
-          title: "主动降噪Type-C耳机",
+          imgUrl: 'product4.png',
+          title: "BES2000IS/2300Y",
           intro: ""
         },
         {
-          title: "海威特 I39运动蓝牙耳机",
+          imgUrl: 'product5.jpg',
+          title: "BES2000IS/2300Y",
           intro: ""
         }
       ],
       products2: [
         {
-          title: "无线音频收发器",
+          imgUrl: 'product6.png',
+          title: "低功耗5.0、单声道、立体式耳机方案",
           intro: ""
         },
         {
-          title: "无线运动耳机",
+          imgUrl: 'product7.png',
+          title: "低功耗5.0、单声道、立体式耳机方案",
           intro: ""
         },
         {
-          title: "手机标配数字耳机",
+          imgUrl: 'product8.png',
+          title: "低功耗5.0、单声道、立体式耳机方案",
           intro: ""
         }
       ]

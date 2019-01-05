@@ -43,35 +43,6 @@
 
     <!-- 产品 解决方案  -->
     <div id="product"></div>
-    <!-- <section class="products">
-      <p class="section-title">
-        <span class="title-cn">业务范围</span>
-        <span class="title-en">BUSINESS SCOPE</span>
-        <img src="../../static/images/arrow-down.png">
-      </p>
-      <div class="product-box">
-        <ul class="boxs-ul">
-          <li v-for="(val,i) in products">
-            <router-link :to="'/product/detail/' + i">
-              <div class="img-box">
-                <img :src="'../../static/images/'+ 'product'+i+'.png'">
-              </div>
-              <div class="box-title">
-                <div class="title1">
-                  <p class="title1_1">{{val.title}}</p>
-                  <p class="title1_2">{{val.intro | utilLength}}</p>
-                </div>
-              </div>
-            </router-link>
-          </li>
-        </ul>
-      </div>
-      <router-link to="/product">
-        <p class="more product-more">
-          浏览更多
-        </p>
-      </router-link>
-    </section> -->
     <section class="products">
       <p class="section-title">
         <span class="title-cn">业务范围</span>
@@ -100,6 +71,7 @@
         </p>
       </router-link>
     </section>
+
     <section class="products solution">
       <p class="section-title">
         <span class="title-cn">解决方案</span>
@@ -109,8 +81,7 @@
       <div class="product-box solution-box">
         <div class="box_left">
           <div class="box_big">
-            <!-- <router-link :to="'/product/detail/' + 1"> -->
-            <router-link to="#">
+            <router-link to="/solution">
               <div class="left-img">
                 <img src="../../static/images/solution0.png">
               </div>

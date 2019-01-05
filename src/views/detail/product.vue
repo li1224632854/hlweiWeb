@@ -5,17 +5,51 @@
         <carousel :starting-image="0" :images="images " :auto-slide-interval="3000"></carousel>
       </el-card>
     </div>
-    <div class="detail-right">
+    <div class="detail-right" v-if="params === '0'">
       <h1 class="right-title">
-        <span v-if="params === '0'"> BES2300L/H/Z</span>
-        <span v-else-if="params === '1'"> BES2000IS/Y</span>
-        <span v-else> WT-200M/S</span>
+        <span>BES2300L/H/Z</span>
       </h1>
       <p class="content">
-        先进的CMOS工艺全集成包括射频，电源管理，音频以及Cortex-M4F MCU<br /> 支持Bluetooth® v4.2标准，A2DP v1.3/ACRCP v1.5/HFP v1.5<br /> 支持多端EQ调整，回声消除及重低音增强
-        <br /> 最高支持400MHz的ARM Cortex-M4F MCU操作<br /> 片上支持8Mb Flash方便客户定制化程序开发<br /> 输入电压范围3.1V～5.5V
-        <br /> 支持片内低功耗晶体（LPO）以及低功耗应用
-        <br /> 支持USB 2.0 FS<br /> HIFI立体声音频输出，DAC SNR 105dB；采样率支持范围8KHz ～ 192KHz<br /> HIFI立体声音频输入，ADC SNR 96dB；采样率支持范围8KHz ～ 192KHz<br />
+        先进的CMOS 28纳米工艺全集成包括射频，音频以及Cortex-M4F MCU<br />
+        支持Bluetooth5.0  TWS低功耗芯片，A2DP v1.3/ACRCP v1.5/HFP v1.5/ANC<br />
+        支持双边通话、多端EQ调整，回声消除及重低音增强功能应用<br />
+        最高支持400MHz的ARM Cortex-M4F MCU操作<br />
+        支持8-32Mb Flash方便客户定制化程序开发<br />
+        支持片内低功耗晶体（LPO）以及低功耗应用<br />
+        功耗：最大音量播放功耗低至8MA
+        封装：BGA4.5*6.2*1.2MM<br />
+        HIFI立体声音频输出，DAC SNR 105dB；采样率支持范围8KHz ～ 192KHz<br />
+        HIFI立体声音频输入，ADC SNR 96dB；采样率支持范围8KHz ～ 192KHz<br />
+      </p>
+    </div>
+    <div class="detail-right" v-if="params === '1'">
+      <h1 class="right-title">
+        <span>BES2000IS/2300Y</span>
+      </h1>
+      <p class="content">
+        支持数字主动降噪功能，ANC/TWS+ANC<br />
+支持400MHz的ARM Cortex-M4F MCU操作<br />
+支持8Mb Flash方便客户定制化程序开发<br />
+输入电压范围3.1V～5.5V  支持USB 2.0 FS<br />
+封装：BGA4.5*5.9*1.2MM<br />
+      </p>
+    </div>
+    <div class="detail-right" v-if="params === '2'">
+      <h1 class="right-title">
+        <span>BES1400XX</span>
+      </h1>
+      <p class="content">
+        适用耳机：单声道/立体声低功耗BT5.0耳机<br />
+先进的CMOS28纳米工艺全集成包括射频，音频以及Cortex-M4F MCU<br />
+支持Bluetooth5.0标准，A2DP v1.3/ACRCP v1.5/HFP v1.5<br />
+支持多端EQ调整，回声消除及重低音增强<br />
+支持400MHz的ARM Cortex-M4F MCU操作<br />
+支持8Mb Flash方便客户定制化程序开发<br />
+支持片内低功耗晶体（LPO）以及低功耗应用<br />
+功耗：最大音量播放功耗低至5MA<br />
+封装：QFN4*6*1.2MM、BGA2.7*4.4*1.2MM<br />
+HIFI立体声音频输出，DAC SNR 105dB；采样率支持范围8KHz ～ 192KHz<br />
+HIFI立体声音频输入，ADC SNR 96dB；采样率支持范围8KHz ～ 192KHz<br />
       </p>
     </div>
   </div>
@@ -62,8 +96,8 @@ export default {
         },
         {
           id: "5",
-          big: "../../../static/images/product5.png",
-          thumb: "../../../static/images/product5.png"
+          big: "../../../static/images/product5.jpg",
+          thumb: "../../../static/images/product5.jpg"
         },
         {
           id: "6",

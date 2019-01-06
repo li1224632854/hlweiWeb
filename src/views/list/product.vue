@@ -137,7 +137,7 @@ export default {
       margin: 12px;
       border-radius: 3px;
       .main_img {
-        margin-top: 50px;
+        // margin-top: 50px;
         width: 95%;
       }
     }

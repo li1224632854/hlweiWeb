@@ -83,7 +83,7 @@
           <div class="box_big">
             <router-link to="/solution">
               <div class="left-img">
-                <img src="../../static/images/solution0.png">
+                <img src="../../static/images/solution0.png" alt="BT5.0低功耗TWS解决方案">
               </div>
               <p class="left-title">
                 BT5.0低功耗TWS解决方案
@@ -95,12 +95,12 @@
           <ul class="boxs-ul right-ul">
             <li v-for="(val,i) in solutions" :key="i">
               <!-- <router-link :to="'/product/detail/' + i"> -->
-              <router-link to="#">
+              <router-link to="/solution">
                 <div class="img-right">
-                  <img :src="'../../static/images/'+ 'solution'+(i+1)+'.png'">
+                  <img :src="'../../static/images/'+ val.imgUrl " v-bind="val.title">
                 </div>
                 <p class="box-title-right">
-                  {{val}}
+                  {{val.title}}
                 </p>
               </router-link>
             </li>
@@ -216,7 +216,7 @@ export default {
         {
           imgUrl: 'business1.png',
           title: "软件开发",
-          intro: "WS&ANC主动降噪耳机定制UI及完整软件开发方案"
+          intro: "TWS&ANC主动降噪耳机定制UI及完整软件开发方案"
         },
         { 
           imgUrl: 'business2.png',
@@ -233,12 +233,19 @@ export default {
           intro: "蓝牙AP、8852B、网分专业测试系统设备"
         }
       ],
-      solutions: [
-        "ANC数字主动降噪解决方案",
-        "低功耗BT5.0单声道耳机解决方案",
-        "低功耗BT5.0立体声耳机解决方案",
-        "AI语音智能耳机方案"
-      ],
+      solutions: [{
+        imgUrl: 'solution1.png',
+        title: "ANC数字主动降噪解决方案"
+      }, {
+        imgUrl: 'solution2.png',
+        title: "低功耗BT5.0单声道耳机解决方案"
+      }, {
+        imgUrl: 'solution3.png',
+        title: "低功耗BT5.0立体声耳机解决方案"
+      }, {
+        imgUrl: 'solution4.png',
+        title: "AI语音智能耳机方案"
+      }],
       news: [
         {
           title: "蓝牙4.2双模HiFi音频：BES恒玄FWS全无线耳机方案BES2000IZ",
@@ -459,8 +466,9 @@ export default {
   .box_right {
     .right-ul {
       li {
-        height: 322px;
+        height: 295px;
         width: calc(20%);
+        margin-bottom: 10px;
         .img-right {
           width: 100%;
           height: 100%;
@@ -472,7 +480,7 @@ export default {
         .box-title-right {
           position: absolute;
           left: 0;
-          bottom: 45px;
+          bottom: 0px;
           font-size: 15px;
           width: 100%;
           color: #fff;

@@ -3,7 +3,7 @@
         <el-table :data="tableData" border style="width: 100%" header-cell-style="background:#008DD7;color:#fff">
             <el-table-column prop="brand" label="供应商品牌" width="100" align="center">
             </el-table-column>
-            <el-table-column prop="type" label="产品型号" width="120" align="center">
+            <el-table-column prop="type" fixed="left" label="产品型号" width="120" align="center">
                 <template slot-scope="scope">
                     <el-tag size="medium">{{ scope.row.type }}</el-tag>
                 </template>
@@ -22,9 +22,9 @@
             </el-table-column>
             <el-table-column prop="market" label="应用市场" width="160" align="center">
             </el-table-column>
-            <el-table-column label="" width="" align="center">
+            <el-table-column label="" width="" align="center" fixed="right">
                 <template slot-scope="scope">
-                    <el-button type="text" size="small" @click="toDetail()">查看详情</el-button>
+                    <el-button type="text" size="small" @click="toDetail(scope.row.url)">查看详情</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -54,7 +54,8 @@ export default {
           BTProfile: "BT 4.2 dual mode",
           description: "单耳，单声道",
           power: "15MA",
-          market: "单声道耳机"
+          market: "单声道耳机",
+          url: 'http://hlwei.com/doc/2019/1/6/WT200-S_datasheetv0.7_1803(1).pdf'
         },
         {
           brand: "海凌威",
@@ -65,7 +66,8 @@ export default {
           BTProfile: "BT 4.2 dual mode",
           description: "双耳，立体声",
           power: "15MA",
-          market: "立体声耳机"
+          market: "立体声耳机",
+          url: 'http://hlwei.com/doc/2019/1/6/WT200-S_datasheetv0.7_1803(1).pdf'
         },
         {
           brand: "海凌威",
@@ -76,7 +78,8 @@ export default {
           BTProfile: "BT 4.2 dual mode",
           description: "4.2TWS，单边通话",
           power: "23MA",
-          market: "TWS+单边通话耳机"
+          market: "TWS+单边通话耳机",
+          url: 'http://hlwei.com/doc/2019/1/6/WT200-U_datasheet___v0.4.pdf'
         },
         {
           brand: "海凌威",
@@ -87,7 +90,8 @@ export default {
           BTProfile: "BT 4.2 dual mode",
           description: "4.2TWS，单边通话",
           power: "23MA",
-          market: "TWS+单边通话耳机"
+          market: "TWS+单边通话耳机",
+          url: 'http://hlwei.com/doc/2019/1/6/BES2000-U_Datasheet_v0.51.pdf'
         },
         {
           brand: "海凌威",
@@ -99,7 +103,8 @@ export default {
           description:
             "Support  low power  stereo earphone/基础版低功耗TWS功能;",
           power: "21MA",
-          market: "TWS+双边通话耳机"
+          market: "TWS+双边通话耳机",
+          url: 'http://hlwei.com/doc/2019/1/6/BES2000-IZ_Datasheet_v0.18.pdf'
         },
         {
           brand: "海凌威",
@@ -111,7 +116,8 @@ export default {
           description:
             "Support  low power  stereo earphone/基础版低功耗TWS功能;",
           power: "8-10MA",
-          market: "TWS+双边通话耳机+低功耗"
+          market: "TWS+双边通话耳机+低功耗",
+          url: 'http://hlwei.com/doc/2019/1/6/BES2300-L_Datasheet_v0.22.pdf'
         },
         {
           brand: "海凌威",
@@ -122,7 +128,8 @@ export default {
           BTProfile: "BT 5.0 dual mode",
           description: "Support  low power  TWS earphone/+主从切换功能",
           power: "8-10MA",
-          market: "TWS+双边通话耳机+主从切换+低功耗"
+          market: "TWS+双边通话耳机+主从切换+低功耗",
+          url: 'http://hlwei.com/doc/2019/1/6/BES2300-H_Datasheet_v0.20.pdf'
         },
         {
           brand: "海凌威",
@@ -133,7 +140,8 @@ export default {
           BTProfile: "BT 5.0 dual mode",
           description: "BT5.0+低功耗+立体声",
           power: "7MA",
-          market: "低功耗小封装耳机"
+          market: "低功耗小封装耳机",
+          url: 'http://hlwei.com/doc/2019/1/6/BES2300-IH_Datasheet_v0.20.pdf'
         },
         {
           brand: "海凌威",
@@ -145,7 +153,8 @@ export default {
           description:
             "Support  low power  TWS or Stereo Hybrid ANC and Voice AI/混合ANC+TWS",
           power: "12MA",
-          market: "TWS+ANC主动降噪"
+          market: "TWS+ANC主动降噪",
+          url: 'http://hlwei.com/doc/2019/1/6/BES2300-Y_Datasheet_v0.14.pdf'
         },
         {
           brand: "海凌威",
@@ -156,14 +165,19 @@ export default {
           BTProfile: "BT 5.0 dual mode",
           description: "BT5.0低功耗双耳，立体声",
           power: "6MA",
-          market: "低功耗立体声耳机"
+          market: "低功耗立体声耳机",
+          url: ''
         }
       ]
     };
   },
   filters: {},
   methods: {
-    toDetail() {}
+    toDetail(url) {
+      if (url) {
+        window.open(url, '_blank');
+      }
+    }
   }
 };
 </script>

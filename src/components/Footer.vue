@@ -11,7 +11,7 @@
           </p>
           <p class="icon-p">
             <img src="../../static/images/wz.png">
-            <span>深圳市宝安区智汇创新中心D座308-310</span>
+            <span>广东省深圳市宝安区航城街道鹤州社区洲石路743号深业世纪工业中心C座301</span>
           </p>
           <div class="footer-right">
             <p class="icon-p right">
